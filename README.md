@@ -106,7 +106,6 @@ For each department, the dashboard provides:
 
 ### Organization Structure
 ```json
-organizational_structure = {
     "Finance": {
         "Entry-Level": ["Accountant", "Financial Analyst"],
         "Mid-Level": ["Senior Financial Analyst"],
@@ -154,30 +153,27 @@ organizational_structure = {
         "Mid-Level": ["Senior Customer Service Representative"],
         "Managerial": ["Customer Service Manager"],
         "Senior Management": ["Customer Service Director"]
-    }
-}
+    },
+  role_distribution = {
+      "Entry-Level": 0.70,
+      "Mid-Level": 0.20,
+      "Managerial": 0.07,
+      "Senior Management": 0.03
+  }
 ```
 ### Data Creation Code
 
 ```python
-# Define role distribution percentages
-role_distribution = {
-    "Entry-Level": 0.70,
-    "Mid-Level": 0.20,
-    "Managerial": 0.07,
-    "Senior Management": 0.03
-}
-
-# Calculate the number of each role type for 1000 entries
-num_entries = 1000
+# Calculate the number of each role type for 2600 entries
+num_entries = 2600
 entries_distribution = {role: int(num_entries * pct) for role, pct in role_distribution.items()}
 
-# Ensure total is exactly 1000 due to rounding issues
+# Ensure total is exactly 2600 due to rounding issues
 entries_distribution["Entry-Level"] += num_entries - sum(entries_distribution.values())
 
 # Generate data based on the organizational structure
-additional_data = []
-id_counter = 1601
+data = []
+id_counter = 1
 
 for role, count in entries_distribution.items():
     for _ in range(count):
@@ -197,23 +193,16 @@ for role, count in entries_distribution.items():
             "Email": faker.email(),
             "Phone Number": faker.phone_number()
         }
-        additional_data.append(person)
+        data.append(person)
         id_counter += 1
 
-# Create DataFrame for additional 1000 entries
-df_additional_1000 = pd.DataFrame(additional_data)
+# Create DataFrame for additional 2600 entries
+df_2600 = pd.DataFrame(additional_data)
 
-# Merge with the existing combined dataframe
-df_combined_updated = pd.concat([df_combined, df_additional_1000], ignore_index=True)
+# Save the dataframe to a new CSV file
+file_path = "/mnt/data/company_employees.csv"
+df_2600.to_csv(file_path, index=False)
 
-# Save the updated combined dataframe to a new CSV file
-file_path_combined_updated = "/mnt/data/company_employees_combined_realistic.csv"
-df_combined_updated.to_csv(file_path_combined_updated, index=False)
-
-import ace_tools as tools; tools.display_dataframe_to_user(name="Updated Combined Company Employees", dataframe=df_combined_updated)
-
-# Display the file path for the updated combined file
-file_path_combined_updated
 ```
 
 
