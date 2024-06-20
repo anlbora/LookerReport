@@ -154,7 +154,7 @@ For each department, the dashboard provides:
         "Managerial": ["Customer Service Manager"],
         "Senior Management": ["Customer Service Director"]
     },
-  role_distribution = {
+    "role_distribution" = {
       "Entry-Level": 0.70,
       "Mid-Level": 0.20,
       "Managerial": 0.07,
