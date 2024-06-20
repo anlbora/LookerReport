@@ -7,6 +7,8 @@ This README file provides a comprehensive guide to understanding and using the C
 
 ## Dashboard Overview
 
+![1](https://github.com/anlbora/LookerReport/assets/100442507/9dfe2f90-7c03-40df-a62e-9d88c5f383b2)
+
 The dashboard is divided into several sections, each providing valuable information through visualizations and data tables. Below is a breakdown of the components included in the dashboard:
 
 ### 1. Filters and Navigation
@@ -16,6 +18,16 @@ The dashboard is divided into several sections, each providing valuable informat
 - **Name Search**: Enter a first name to filter the data by employee name.
 - **Date Range Selector**: Choose a date range to filter employees by their join date.
 - **Reset Filters Button**: Click this button to clear all filters and reset the dashboard to its default view.
+  
+![2](https://github.com/anlbora/LookerReport/assets/100442507/140e5b82-6c75-4276-8051-e5ad0180126d)
+
+![3](https://github.com/anlbora/LookerReport/assets/100442507/400554ff-9b9f-4dbb-9691-684f45c13be4)
+
+![4](https://github.com/anlbora/LookerReport/assets/100442507/b0c85ac7-960f-4086-af30-642b981e4c8c)
+
+![5](https://github.com/anlbora/LookerReport/assets/100442507/73eb7edf-c8f9-4a8e-b9d2-f4f66b7c0271)
+
+![6](https://github.com/anlbora/LookerReport/assets/100442507/4760c065-147c-4413-ab9f-5c49d6b87474)
 
 ### 2. Key Metrics
 
