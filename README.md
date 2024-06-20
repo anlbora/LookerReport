@@ -2,6 +2,9 @@
 
 This README file provides a comprehensive guide to understanding and using the Company Report Dashboard. This dashboard is designed to offer insights into the employee distribution, salary ranges, and departmental structures within the company.
 
+## Report Link
+- https://lookerstudio.google.com/embed/reporting/0fce3e31-1d30-4446-ab57-5042cd9a2202/page/c6s3D
+
 ## Dashboard Overview
 
 The dashboard is divided into several sections, each providing valuable information through visualizations and data tables. Below is a breakdown of the components included in the dashboard:
@@ -87,5 +90,5 @@ For each department, the dashboard provides:
 3. **Analyze Charts**: Examine the generated charts to get insights into employee distribution, salary ranges, and departmental breakdowns.
 4. **Use the Data Table**: For detailed analysis, refer to the data table which provides comprehensive employee information.
 
-<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/0fce3e31-1d30-4446-ab57-5042cd9a2202/page/c6s3D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+
 
