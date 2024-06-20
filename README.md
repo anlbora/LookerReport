@@ -102,5 +102,118 @@ For each department, the dashboard provides:
 3. **Analyze Charts**: Examine the generated charts to get insights into employee distribution, salary ranges, and departmental breakdowns.
 4. **Use the Data Table**: For detailed analysis, refer to the data table which provides comprehensive employee information.
 
+## Data Creation
+
+### Organization Structure
+```json
+organizational_structure = {
+    "Finance": {
+        "Entry-Level": ["Accountant", "Financial Analyst"],
+        "Mid-Level": ["Senior Financial Analyst"],
+        "Managerial": ["Finance Manager"],
+        "Senior Management": ["Finance Director"]
+    },
+    "HR": {
+        "Entry-Level": ["HR Specialist", "Recruiter"],
+        "Mid-Level": ["Senior HR Specialist"],
+        "Managerial": ["HR Manager"],
+        "Senior Management": ["HR Director"]
+    },
+    "Engineering": {
+        "Entry-Level": ["Software Engineer", "Mechanical Engineer", "Electrical Engineer"],
+        "Mid-Level": ["Senior Software Engineer", "Senior Mechanical Engineer", "Senior Electrical Engineer"],
+        "Managerial": ["Engineering Manager"],
+        "Senior Management": ["VP of Engineering"]
+    },
+    "Sales": {
+        "Entry-Level": ["Sales Associate", "Business Development Representative"],
+        "Mid-Level": ["Senior Sales Associate"],
+        "Managerial": ["Sales Manager"],
+        "Senior Management": ["Sales Director"]
+    },
+    "Marketing": {
+        "Entry-Level": ["Marketing Coordinator", "Content Creator"],
+        "Mid-Level": ["Senior Marketing Coordinator"],
+        "Managerial": ["Marketing Manager"],
+        "Senior Management": ["Marketing Director"]
+    },
+    "IT": {
+        "Entry-Level": ["IT Support", "Network Administrator"],
+        "Mid-Level": ["Senior IT Support"],
+        "Managerial": ["IT Manager"],
+        "Senior Management": ["IT Director"]
+    },
+    "Operations": {
+        "Entry-Level": ["Operations Coordinator", "Supply Chain Specialist"],
+        "Mid-Level": ["Senior Operations Coordinator"],
+        "Managerial": ["Operations Manager"],
+        "Senior Management": ["Operations Director"]
+    },
+    "Customer Service": {
+        "Entry-Level": ["Customer Service Representative", "Call Center Agent"],
+        "Mid-Level": ["Senior Customer Service Representative"],
+        "Managerial": ["Customer Service Manager"],
+        "Senior Management": ["Customer Service Director"]
+    }
+}
+```
+### Data Creation Code
+
+```python
+# Define role distribution percentages
+role_distribution = {
+    "Entry-Level": 0.70,
+    "Mid-Level": 0.20,
+    "Managerial": 0.07,
+    "Senior Management": 0.03
+}
+
+# Calculate the number of each role type for 1000 entries
+num_entries = 1000
+entries_distribution = {role: int(num_entries * pct) for role, pct in role_distribution.items()}
+
+# Ensure total is exactly 1000 due to rounding issues
+entries_distribution["Entry-Level"] += num_entries - sum(entries_distribution.values())
+
+# Generate data based on the organizational structure
+additional_data = []
+id_counter = 1601
+
+for role, count in entries_distribution.items():
+    for _ in range(count):
+        department = random.choice(list(organizational_structure.keys()))
+        title = random.choice(organizational_structure[department][role])
+        salary = round(random.uniform(40000, 120000), 2)
+        join_date = faker.date_between(start_date='-10y', end_date='today')
+        
+        person = {
+            "ID": id_counter,
+            "First Name": faker.first_name(),
+            "Last Name": faker.last_name(),
+            "Department": department,
+            "Title": title,
+            "Salary": salary,
+            "Join Date": join_date,
+            "Email": faker.email(),
+            "Phone Number": faker.phone_number()
+        }
+        additional_data.append(person)
+        id_counter += 1
+
+# Create DataFrame for additional 1000 entries
+df_additional_1000 = pd.DataFrame(additional_data)
+
+# Merge with the existing combined dataframe
+df_combined_updated = pd.concat([df_combined, df_additional_1000], ignore_index=True)
+
+# Save the updated combined dataframe to a new CSV file
+file_path_combined_updated = "/mnt/data/company_employees_combined_realistic.csv"
+df_combined_updated.to_csv(file_path_combined_updated, index=False)
+
+import ace_tools as tools; tools.display_dataframe_to_user(name="Updated Combined Company Employees", dataframe=df_combined_updated)
+
+# Display the file path for the updated combined file
+file_path_combined_updated
+```
 
 
