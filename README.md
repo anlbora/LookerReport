@@ -69,14 +69,7 @@ For each department, the dashboard provides:
 
 ### Included Files
 
-1. **company_employees_combined_realistic.csv**: The combined dataset containing employee details.
-2. **Dashboard Images**: Visual examples of the dashboard sections.
-   - ![Dashboard Overview](sandbox:/mnt/data/1.png)
-   - ![Department Filter Example](sandbox:/mnt/data/2.png)
-   - ![Salary Range Example](sandbox:/mnt/data/3.png)
-   - ![Title Distribution](sandbox:/mnt/data/4.png)
-   - ![Detailed Insights](sandbox:/mnt/data/5.png)
-   - ![Specific Department Example](sandbox:/mnt/data/6.png)
+- **company_employees_combined_realistic.csv**: The combined dataset containing employee details.
 
 ### Generated Charts
 
@@ -94,4 +87,5 @@ For each department, the dashboard provides:
 3. **Analyze Charts**: Examine the generated charts to get insights into employee distribution, salary ranges, and departmental breakdowns.
 4. **Use the Data Table**: For detailed analysis, refer to the data table which provides comprehensive employee information.
 
-For any further assistance or inquiries about the dashboard, please contact the HR department or the report author.
+<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/0fce3e31-1d30-4446-ab57-5042cd9a2202/page/c6s3D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+
