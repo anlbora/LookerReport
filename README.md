@@ -3,7 +3,7 @@
 This README file provides a comprehensive guide to understanding and using the Company Report Dashboard. This dashboard is designed to offer insights into the employee distribution, salary ranges, and departmental structures within the company.
 
 ## Report Link
-- https://lookerstudio.google.com/embed/reporting/0fce3e31-1d30-4446-ab57-5042cd9a2202/page/c6s3D
+- [Report](https://lookerstudio.google.com/s/kK0Iu1UoelI)
 
 ## Dashboard Overview
 
